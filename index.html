@@ -138,7 +138,7 @@
         .video-container {
             margin: 15px 0;
         }
-        .video-container video, .author-video video {
+        .video-container video {
             width: 100%;
             border-radius: 4px;
             border: 1px solid rgba(0,255,102,0.3);
@@ -156,6 +156,48 @@
         }
         .manifest p {
             margin-bottom: 10px;
+        }
+        .terminal-status-card {
+            background: #041420;
+            border: 1px solid var(--accent-color);
+            border-radius: 6px;
+            padding: 20px;
+            font-family: 'Fira Code', monospace;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 8px;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot.red { background: #FF5F56; }
+        .dot.yellow { background: #FFBD2E; }
+        .dot.green { background: #27C93F; }
+        .terminal-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-left: 5px;
+        }
+        .terminal-body p {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            font-family: 'Fira Code', monospace;
+        }
+        .terminal-body .blink {
+            animation: blink 1.5s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
         }
         @media(max-width: 768px) {
             .screenshots-grid {
@@ -251,7 +293,7 @@
             </div>
         </section>
 
-        <!-- Блок 5: Манифест практика и видео автора -->
+        <!-- Блок 5: Манифест практика с терминалом статуса -->
         <section>
             <h2>04 // Манифест практика</h2>
             <div class="author-section">
@@ -261,11 +303,20 @@
                     <p><strong>Опыт:</strong> 20+ лет практического опыта телеремонта (Армавиртелеремонт) и современный вайбкодинг.</p>
                     <p><em>«Пока твои руки заняты реальным бизнесом, клиентами или структурой, машина берет на себя всю рутину. Я не продаю воздух. Я показываю, как скрестить многолетнюю практику с ИИ».</em></p>
                 </div>
-                <div class="author-video">
-                    <video controls>
-                        <source src="workshop-tv.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает воспроизведение видео.
-                    </video>
+                <div class="terminal-status-card">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">system_status.log</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p>> CORE: Инженерный подход [ACTIVE]</p>
+                        <p>> TIME SAVED: 10 hrs / week</p>
+                        <p>> STACK: HTML5 / JS / GitHub Pages</p>
+                        <p>> TARGET: Малый бизнес & МЛМ</p>
+                        <p class="blink">> [ СИСТЕМА ГОТОВА К РАБОТЕ ]</p>
+                    </div>
                 </div>
             </div>
         </section>
