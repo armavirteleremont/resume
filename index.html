@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Уверен и Готов — ИИ для тех, кто работает руками</title>
+    <title>[УВЕРЕН И ГОТОВ]: ИИ для тех, кто работает руками и головой</title>
+    <meta name="description" content="Проект Александра Парфилова. ИИ и автоматизация рутины для малого бизнеса, мастеров и сетевого маркетинга без курсов за 50к. Опыт практика (20+ лет в Армавиртелеремонт).">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -25,7 +26,7 @@
             line-height: 1.6;
         }
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -38,11 +39,19 @@
             font-weight: 800;
             margin-bottom: 20px;
             line-height: 1.2;
+            font-family: 'Fira Code', monospace;
+            color: var(--accent-color);
         }
         h2 {
             font-size: 1.6rem;
             margin-bottom: 20px;
             color: var(--accent-color);
+            font-family: 'Fira Code', monospace;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #FFFFFF;
+            margin-bottom: 8px;
             font-family: 'Fira Code', monospace;
         }
         p {
@@ -58,51 +67,32 @@
             color: var(--text-color);
             font-weight: 600;
         }
-        .terminal-form {
-            background: #041420;
-            border: 2px solid var(--accent-color);
-            padding: 30px;
-            border-radius: 6px;
-            font-family: 'Fira Code', monospace;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        .cases-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
         }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            color: var(--accent-color);
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-        .form-control {
-            width: 100%;
-            padding: 12px;
+        .case-card {
             background: var(--card-bg);
-            border: 1px solid rgba(0,255,102,0.3);
-            color: var(--text-color);
-            font-family: 'Fira Code', monospace;
-            border-radius: 4px;
-            outline: none;
+            border: 1px solid rgba(0,255,102,0.2);
+            padding: 25px;
+            border-radius: 6px;
+            transition: border-color 0.2s;
         }
-        .form-control:focus {
+        .case-card:hover {
             border-color: var(--accent-color);
         }
-        .btn-terminal {
-            background: var(--accent-color);
-            color: #000;
-            padding: 15px 30px;
-            font-weight: 700;
-            border: none;
-            cursor: pointer;
+        .case-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
             font-family: 'Fira Code', monospace;
-            width: 100%;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: background 0.2s;
+            font-weight: 700;
         }
-        .btn-terminal:hover {
-            background: #00cc52;
+        .case-link:hover {
+            text-decoration: underline;
         }
         .manifest {
             background: var(--card-bg);
@@ -113,6 +103,11 @@
         .manifest p {
             margin-bottom: 10px;
         }
+        @media(min-width: 768px) {
+            .cases-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -120,43 +115,57 @@
         
         <!-- Блок 1: Главный экран -->
         <header>
-            <h1>ИИ для тех, кто работает руками и головой — 10 часов рутины в неделю без курсов за 50к[cite: 18]</h1>
-            <p class="hero-subtitle">«Пока ты занят реальным делом — на верстаке, на объекте или в цеху — алгоритмы работают на тебя»[cite: 18].</p>
+            <h1>[УВЕРЕН И ГОТОВ]: ИИ для тех, кто работает руками, в офисе и в МЛМ — 10 часов рутины в неделю без курсов за 50к</h1>
+            <p class="hero-subtitle">«Пока твои руки заняты реальным делом — на верстаке, на объекте, в офисе или на созвоне с командой — алгоритмы работают на тебя».</p>
         </header>
 
         <!-- Блок 2: Чистый КПД (Математика времени) -->
         <section>
-            <h2>01 // Чистый КПД</h2>
-            <p>Пока твои руки заняты паяльником, укладкой кирпича или стрижкой, алгоритмы работают на тебя[cite: 18].</p>
-            <p><strong>Результат:</strong> Машина генерирует живые посты для ВК, теги и описания для YouTube и RUTUBE за 0 рублей. Сэкономленные 10 часов рутины возвращаются обратно в бизнес, превращаясь в реальные деньги[cite: 18].</p>
+            <h2>01 // Чистый КПД и Масштаб</h2>
+            <p>Рутина везде одинакова: генерация постов, отчеты, переписки, прогревы и контент-планы. Инструменты ИИ нужны не только мастерам на производстве, но и тем, кто строит сетевой маркетинг (МЛМ) или ведет дела из офиса[cite: 6].</p>
+            <p><strong>Результат:</strong> Машина генерирует живые посты для ВК, Telegram, теги и описания для YouTube за 0 рублей. Сэкономленные 10 часов рутины возвращаются обратно в бизнес, превращаясь в реальные деньги.</p>
         </section>
 
         <!-- Блок 3: Инженерный подход (Проблема vs Решение) -->
         <section>
             <h2>02 // Инженерный подход</h2>
-            <p><strong>Проблема:</strong> Классические формулы маркетинга (AIDA и прочий пластиковый бред) — это имитация бурной деятельности. Малому бизнесу нужен рабочий инструмент, а не лекции[cite: 18].</p>
-            <p><strong>Решение:</strong> Наш инженерный подход. Вместо заумных промптов — жесткие, понятные технические ТЗ. Нейросеть работает как отлаженный осциллограф, выдавая готовый результат за 10 секунд[cite: 18].</p>
+            <p><strong>Проблема:</strong> Классические формулы маркетинга (AIDA и прочий пластиковый бред) — это имитация бурной деятельности. Малому бизнесу и практикам нужен рабочий инструмент, а не лекции.</p>
+            <p><strong>Решение:</strong> Наш инженерный подход. Вместо заумных промптов — жесткие, понятные технические ТЗ. Нейросеть работает как отлаженный осциллограф, выдавая готовый результат за 10 секунд.</p>
         </section>
 
-        <!-- Блок 4: Терминал ввода (Форма подписки) -->
+        <!-- Блок 4: Портфолио (4 Реальных Кейса) -->
         <section>
-            <h2>03 // Терминал ввода</h2>
-            <div class="terminal-form">
-                <form id="leadForm">
-                    <div class="form-group">
-                        <label>&gt; ИМЯ:</label>
-                        <input type="text" class="form-control" name="name" required placeholder="Введите ваше имя...">
-                    </div>
-                    <div class="form-group">
-                        <label>&gt; КОНТАКТЫ (Телефон / Telegram):</label>
-                        <input type="text" class="form-control" name="contacts" required placeholder="@username или телефон...">
-                    </div>
-                    <div class="form-group">
-                        <label>&gt; НИША (Сфера деятельности):</label>
-                        <input type="text" class="form-control" name="niche" placeholder="Например: ремонт техники, автосервис...">
-                    </div>
-                    <button type="submit" class="btn-terminal">[ НАЧАТЬ АВТОМАТИЗАЦИЮ ]</button>
-                </form>
+            <h2>03 // Кейсы и практика</h2>
+            <div class="cases-grid">
+                
+                <!-- Кейс 1 -->
+                <div class="case-card">
+                    <h3>01. Проект «Уверен и Готов»</h3>
+                    <p>Флагманский SaaS/инфо-продукт с индустриальным дизайном. Чистый код на GitHub Pages, высокая скорость загрузки и внедрение суровых ТЗ для ИИ взамен инфоцыганских курсов.</p>
+                    <a href="https://uverenigotov.github.io/parfiloff/" class="case-link" target="_blank">[ СМОТРЕТЬ ПРОЕКТ → ]</a>
+                </div>
+
+                <!-- Кейс 2 -->
+                <div class="case-card">
+                    <h3>02. Мастерская «Армавиртелеремонт»</h3>
+                    <p>Цифровизация реального сектора. Посадочный сайт для мастерской с 20+ летним опытом сложного ремонта электроники. Честное позиционирование и прямой поток клиентов.</p>
+                    <a href="https://armavirteleremont.github.io/remontledtv/" class="case-link" target="_blank">[ СМОТРЕТЬ ПРОЕКТ → ]</a>
+                </div>
+
+                <!-- Кейс 3 -->
+                <div class="case-card">
+                    <h3>03. ИИ СММ-планер для соцсетей и МЛМ</h3>
+                    <p>Автоматизированная система генерации контента. Пока вы проводите созвоны или заняты структурой, ИИ выдает готовые посты, сценарии и прогревы для ВК и Telegram за 10 секунд.</p>
+                    <span class="case-link" style="color: var(--text-muted);">[ АКТИВНЫЙ МОДУЛЬ АВТОМАТИЗАЦИИ ]</span>
+                </div>
+
+                <!-- Кейс 4 -->
+                <div class="case-card">
+                    <h3>04. Апгрейд электротранспорта («Дырчик»)</h3>
+                    <p>Инженерный видео-кейс восстановления городского электротранспорта. Диагностика силовой электрики и механики. Доказательство того, что разработчик умеет работать руками в физическом мире.</p>
+                    <span class="case-link" style="color: var(--text-muted);">[ ВИДЕО-АРХИВ МАСТЕРСКОЙ ]</span>
+                </div>
+
             </div>
         </section>
 
@@ -164,9 +173,10 @@
         <section>
             <h2>04 // Манифест практика</h2>
             <div class="manifest">
-                <p><strong>Автор:</strong> Александр Парфилов[cite: 18]</p>
-                <p><strong>Опыт:</strong> 20 лет практического опыта телеремонта (мастерская «Армавиртелеремонт»)[cite: 18].</p>
-                <p><em>«Пока твои руки заняты реальным бизнесом и клиентами, машина берет на себя всю рутину. Я не продаю воздух. Я показываю, как скрестить многолетнюю практику на верстаке с ИИ»[cite: 18].</em></p>
+                <p><strong>Автор:</strong> Александр Парфилов</p>
+                <p><strong>Статус:</strong> Уверены в том, что делаем, готовы к переменам.</p>
+                <p><strong>Опыт:</strong> 20+ лет практического опыта телеремонта («Армавиртелеремонт») и современный вайбкодинг[cite: 1, 6].</p>
+                <p><em>«Пока твои руки заняты реальным бизнесом, клиентами или структурой, машина берет на себя всю рутину. Я не продаю воздух. Я показываю, как скрестить многолетнюю практику с ИИ»[cite: 6].</em></p>
             </div>
         </section>
 
