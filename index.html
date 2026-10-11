@@ -62,6 +62,26 @@
         strong {
             color: var(--text-color);
         }
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 70px 20px;
+        }
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.35;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
         .hero-subtitle {
             font-size: 1.2rem;
             color: var(--text-color);
@@ -106,17 +126,29 @@
             border-radius: 4px;
             border: 1px solid rgba(0,255,102,0.3);
             object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .screenshots-grid img:hover {
+            transform: scale(1.12);
+            box-shadow: 0 8px 25px rgba(0, 255, 102, 0.4);
+            position: relative;
+            z-index: 5;
         }
         .video-container {
             margin: 15px 0;
         }
-        .video-container video {
+        .video-container video, .author-video video {
             width: 100%;
             border-radius: 4px;
             border: 1px solid rgba(0,255,102,0.3);
             outline: none;
         }
-        .manifest {
+        .author-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            align-items: center;
             background: var(--card-bg);
             padding: 30px;
             border-radius: 6px;
@@ -134,22 +166,30 @@
             .cases-grid {
                 grid-template-columns: 1fr 1fr;
             }
+            .author-section {
+                grid-template-columns: 1.2fr 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         
-        <!-- Блок 1: Главный экран -->
-        <header>
-            <h1>[УВЕРЕН И ГОТОВ]: ИИ для тех, кто работает руками, в офисе и в МЛМ — 10 часов рутины в неделю без курсов за 50к</h1>
-            <p class="hero-subtitle">«Пока твои руки заняты реальным делом — на верстаке, на объекте, в офисе или на созвоне с командой — алгоритмы работают на тебя».</p>
+        <!-- Блок 1: Главный экран с фоновым видео -->
+        <header class="hero-section">
+            <video class="video-bg" autoplay muted loop playsinline>
+                <source src="robot_human_handshake.mp4" type="video/mp4">
+            </video>
+            <div class="hero-content">
+                <h1>[УВЕРЕН И ГОТОВ]: ИИ для тех, кто работает руками, в офисе и в МЛМ — 10 часов рутины в неделю без курсов за 50к</h1>
+                <p class="hero-subtitle">«Пока твои руки заняты реальным делом — на верстаке, на объекте, в офисе или на созвоне с командой — алгоритмы работают на тебя».</p>
+            </div>
         </header>
 
         <!-- Блок 2: Чистый КПД (Математика времени) -->
         <section>
             <h2>01 // Чистый КПД и Масштаб</h2>
-            <p>Рутина везде одинакова: генерация посты, отчеты, переписки, прогревы и контент-планы. Инструменты ИИ нужны не только мастерам на производстве, но и тем, кто строит сетевой маркетинг (МЛМ) или ведет дела из офиса.</p>
+            <p>Рутина везде одинакова: генерация постов, отчеты, переписки, прогревы и контент-планы. Инструменты ИИ нужны не только мастерам на производстве, но и тем, кто строит сетевой маркетинг (МЛМ) или ведет дела из офиса.</p>
             <p><strong>Результат:</strong> Машина генерирует живые посты для ВК, Telegram, теги и описания для YouTube за 0 рублей. Сэкономленные 10 часов рутины возвращаются обратно в бизнес, превращаясь в реальные деньги.</p>
         </section>
 
@@ -179,7 +219,7 @@
                     <a href="https://armavirteleremont.github.io/remontledtv/" class="case-link" target="_blank">[ СМОТРЕТЬ ПРОЕКТ → ]</a>
                 </div>
 
-                <!-- Кейс 3 (Скриншоты СММ-планера) -->
+                <!-- Кейс 3 (Скриншоты СММ-планера с зумом при наведении) -->
                 <div class="case-card">
                     <h3>03. ИИ СММ-планер для соцсетей и МЛМ</h3>
                     <p>Автоматизированная система генерации контента. Пока вы проводите созвоны или заняты структурой, ИИ выдает готовые посты, сценарии и прогревы для ВК и Telegram за 10 секунд.</p>
@@ -199,7 +239,7 @@
                     <p>Инженерный видео-кейс восстановления городского электротранспорта. Диагностика силовой электрики и механики. Доказательство того, что разработчик умеет работать руками в физическом мире.</p>
                     
                     <div class="video-container">
-                        <video controls poster="">
+                        <video controls>
                             <source src="Электро скутер ИИ.mp4" type="video/mp4">
                             Ваш браузер не поддерживает воспроизведение видео.
                         </video>
@@ -211,14 +251,22 @@
             </div>
         </section>
 
-        <!-- Блок 5: Манифест практика -->
+        <!-- Блок 5: Манифест практика и видео автора -->
         <section>
             <h2>04 // Манифест практика</h2>
-            <div class="manifest">
-                <p><strong>Автор:</strong> Александр Парфилов</p>
-                <p><strong>Статус:</strong> Уверены в том, что делаем, готовы к переменам.</p>
-                <p><strong>Опыт:</strong> 20+ лет практического опыта телеремонта («Армавиртелеремонт») и современный вайбкодинг.</p>
-                <p><em>«Пока твои руки заняты реальным бизнесом, клиентами или структурой, машина берет на себя всю рутину. Я не продаю воздух. Я показываю, как скрестить многолетнюю практику с ИИ».</em></p>
+            <div class="author-section">
+                <div class="manifest">
+                    <p><strong>Автор:</strong> Александр Парфилов</p>
+                    <p><strong>Статус:</strong> Уверены в том, что делаем, готовы к переменам.</p>
+                    <p><strong>Опыт:</strong> 20+ лет практического опыта телеремонта («Армавиртелеремонт») и современный вайбкодинг.</p>
+                    <p><em>«Пока твои руки заняты реальным бизнесом, клиентами или структурой, машина берет на себя всю рутину. Я не продаю воздух. Я показываю, как скрестить многолетнюю практику с ИИ».</em></p>
+                </div>
+                <div class="author-video">
+                    <video controls>
+                        <source src="workshop-tv.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает воспроизведение видео.
+                    </video>
+                </div>
             </div>
         </section>
 
